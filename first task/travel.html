@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Explorer</title>
+  <link rel="stylesheet" href="travel.css">
+  <style>
+    /* Internal styles for this demo */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section {
+      padding: 2rem;
+      display: none; /* Hide all sections by default */
+    }
+    .section.active {
+      display: block; /* Show only the active section */
+    }
+    .hero, .contact, .booking, .guides, .itineraries, .reviews {
+      margin: 2rem;
+      background: #f4f4f4;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    .cta-button {
+      display: inline-block;
+      background: #28a745;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="logo">Travel Explorer</a>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('guides')">Guides</a></li>
+        <li><a href="#" onclick="showSection('itineraries')">Itineraries</a></li>
+        <li><a href="#" onclick="showSection('booking')">Booking</a></li>
+        <li><a href="#" onclick="showSection('reviews')">Reviews</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sections -->
+
+  <!-- Hero Section (Home) -->
+  <section id="home" class="section active">
+    <div class="hero">
+      <h1>Discover Your Next Adventure</h1>
+      <p>Explore destinations, plan your trips, and book your experiences!</p>
+      <a href="#" class="cta-button" onclick="showSection('booking')">Book Now</a>
+    </div>
+  </section>
+
+  <!-- Guides Section -->
+  <section id="guides" class="section">
+    <div class="guides">
+      <h2>Destination Guides</h2>
+      <p>Get in-depth insights into the world's best travel destinations.</p>
+      <ul>
+        <li><strong>Paris, France:</strong> Romantic streets, Eiffel Tower, and world-class cuisine.</li>
+        <li><strong>Bali, Indonesia:</strong> Stunning beaches and vibrant culture.</li>
+        <li><strong>New York, USA:</strong> Iconic landmarks and diverse neighborhoods.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Itineraries Section -->
+  <section id="itineraries" class="section">
+    <div class="itineraries">
+      <h2>Travel Itineraries</h2>
+      <p>Plan your perfect trip with our customized itineraries for various destinations.</p>
+      <ul>
+        <li><strong>7-Day Europe Adventure:</strong> Paris, Amsterdam, and Berlin.</li>
+        <li><strong>5-Day Bali Getaway:</strong> Relax on the beautiful beaches of Bali.</li>
+        <li><strong>Weekend in New York:</strong> Explore the must-see sights of NYC.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="section">
+    <div class="booking">
+      <h2>Book Your Trip</h2>
+      <form class="booking-form">
+        <input type="text" placeholder="Destination" required>
+        <input type="date" required>
+        <input type="number" placeholder="Number of Travelers" required>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="section">
+    <div class="reviews">
+      <h2>User Reviews</h2>
+      <p>See what our travelers are saying about their experiences.</p>
+      <div>
+        <blockquote>"Amazing experience! Everything was well-organized." - John Doe</blockquote>
+        <blockquote>"Beautiful destinations, great service!" - Jane Smith</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="contact">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required><br>
+        <input type="email" placeholder="Your Email" required><br>
+        <textarea placeholder="Your Message" rows="5" required></textarea><br>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Travel Explorer. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Function to show the clicked section and hide others
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach((section) => {
+        section.classList.remove('active');
+        if (section.id === sectionId) {
+          section.classList.add('active');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
